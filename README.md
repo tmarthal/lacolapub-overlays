@@ -4,6 +4,8 @@ A simple bookmarklet that embeds mouseovers to *.amazon.com book links with easy
 at your local LA County library.
 
 
+Bookmarklet Link
+
 [COLA Public Amazon Highlight](javascript: (function () {
   var includeScript = function(id, src, callback) {
       var s = document.getElementById(id);
