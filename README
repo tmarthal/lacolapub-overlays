@@ -1,6 +1,6 @@
+Bookmarklet Link
 
-
-<a href="javascript: (function () {
+[COLA Public Amazon Highlight](javascript: (function () {
   var includeScript = function(id, src, callback) {
       var s = document.getElementById(id);
       var head = document.getElementsByTagName('head')[0];
@@ -18,4 +18,4 @@
   } else {
     includeScript('colapub-highlight', '/colap.bookmarklet.js');
   }
-}());">COLA Public Amazon Highlight</a>
+}());)
