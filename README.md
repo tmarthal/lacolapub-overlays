@@ -1,6 +1,10 @@
+## Amazon to LA County Libary Bookmarklet
+
+A simple bookmarklet that embeds mouseovers to *.amazon.com book links with easy access to reserve the text
+at your local LA County library.
 
 
-<a href="javascript: (function () {
+[COLA Public Amazon Highlight](javascript: (function () {
   var includeScript = function(id, src, callback) {
       var s = document.getElementById(id);
       var head = document.getElementsByTagName('head')[0];
@@ -14,8 +18,8 @@
   
   if (typeof jQuery == 'undefined') {
     includeScript('jquery-script', 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js', console.log('loaded jquery'));
-    includeScript('colapub-highlight', '/colap.bookmarklet.js');
+    includeScript('colapub-highlight', 'https://raw.github.com/tmarthal/lacolapub-overlays/master/colap.bookmarklet.js');
   } else {
-    includeScript('colapub-highlight', '/colap.bookmarklet.js');
+    includeScript('colapub-highlight', 'https://raw.github.com/tmarthal/lacolapub-overlays/master/colap.bookmarklet.js');
   }
-}());">COLA Public Amazon Highlight</a>
+}());)
