@@ -23,6 +23,7 @@ function colaCreateTooltip() {
 // add a mouseover to each of the amazon links
 function colaEventHandlers() {
 	var anchors = document.links;
+	
 
 	for (var i= 0; i < anchors.length; i++) {
 		// check each of the links for anchor text that has a 
@@ -33,6 +34,8 @@ function colaEventHandlers() {
 		var matched = anchors[i].href.match(/amazon\.com.*(\d{10})/)
 		if (matched != null && matched.length == 2) {
 			var isbn = matched[1];
+			// add the isbn to the anchor
+			jQuery.data(anchors[i],"isbn", isbn)
 			
 			jQuery(anchors[i]).mouseover(function(ev) {
 				jQuery(anchors[i]).css('opacity','0.2');
@@ -42,7 +45,7 @@ function colaEventHandlers() {
 				   (Math.abs(parseInt(jQuery('#cola-tooltip').css('left'))-ev.pageX) > 100)) {
 					jQuery('#cola-tooltip').css({'top':ev.pageY-10,'left':ev.pageX-5}).show();
 				}
-				colaFillTooltip(isbn);
+				colaFillTooltip(jQuery.data(this,"isbn"));
 		    }).mouseout(function(ev) {
 		    	jQuery(anchors[i]).css("opacity",'1.0');
 		    });
@@ -64,3 +67,4 @@ function colaFillTooltip(isbn) {
 
 colaCreateTooltip();
 colaEventHandlers();
+
